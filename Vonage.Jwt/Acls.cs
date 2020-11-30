@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Vonage.Jwt
+namespace Vonage.JwtGeneration
 {
     [JsonConverter(typeof(PathSerializer))]
     public class Acls

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Vonage.Jwt
+namespace Vonage.JwtGeneration
 {
     public class AclPath
     {

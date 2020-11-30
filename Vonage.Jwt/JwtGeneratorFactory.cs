@@ -1,7 +1,7 @@
 ﻿using System.IO;
 using System.Threading.Tasks;
 
-namespace Vonage.Jwt
+namespace Vonage.JwtGeneration
 {
     public class JwtGeneratorFactory
     {

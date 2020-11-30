@@ -8,7 +8,7 @@ using System.Security.Cryptography;
 using Newtonsoft.Json;
 using Org.BouncyCastle.Crypto;
 
-namespace Vonage.Jwt
+namespace Vonage.JwtGeneration
 {
     public class JwtGenerator : IDisposable
     {

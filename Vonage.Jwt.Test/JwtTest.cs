@@ -1,13 +1,13 @@
 using System;
 using Xunit;
-using Vonage.Jwt;
+using Vonage.JwtGeneration;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System.Text.RegularExpressions;
 using System.Collections.Generic;
 using System.IO;
 
-namespace Vonage.Jwt.Test
+namespace Vonage.JwtGeneration.Test
 {
     public class JwtTest
     {
