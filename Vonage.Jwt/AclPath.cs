@@ -6,6 +6,13 @@ using System.Threading.Tasks;
 
 namespace Vonage.JwtGeneration
 {
+    /// <summary>
+    /// An object representing a single ACL path,
+    /// format of path will be:
+    /// <code>"/ApiVersion/ResourceType/Resource":AccessLevels</code>
+    /// A standard way to generate one of these is using wild cards, e.g.
+    /// <code>"/*/push/**": {}</code>
+    /// </summary>
     public class AclPath
     {
         /// <summary>
@@ -19,12 +26,12 @@ namespace Vonage.JwtGeneration
         public string ApiVersion { get; set; }
 
         /// <summary>
-        /// the resource being granted access to. typically an id
+        /// the resource being granted access to. typically an id. For all resources use **
         /// </summary>
         public string Resource { get; set; }
 
         /// <summary>
-        /// The access levels you want to provide for the JWT path, defaults to all
+        /// The access levels you want to provide for the JWT path, defaults to an emptty object (which is all)
         /// </summary>
         public object AccessLevels { get; set; } = new object();
     }

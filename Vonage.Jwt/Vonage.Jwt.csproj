@@ -2,10 +2,25 @@
 
   <PropertyGroup>
     <TargetFrameworks>net452;net46;netstandard2.0</TargetFrameworks>
+    <Version>0.1.0</Version>
+    <Description>This is a utility package for generating JWTs for the <see href="https://developer.nexmo.com/concepts/guides/authentication#json-web-tokens-jwt">Vonage APIs</see></Description>
+    <PackageProjectUrl>https://github.com/Nexmo/vonage-dotnet-jwt</PackageProjectUrl>
+    <PackageReleaseNotes>https://github.com/Nexmo/vonage-dotnet-jwt/releases/tag/v0.1.0</PackageReleaseNotes>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <Copyright>Copyright © Vonage 2020</Copyright>
   </PropertyGroup>
 
+  <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard2.0' ">
+    <PackageReference Include="jose-jwt" Version="2.6.1" />    
+  </ItemGroup>
+
+  <ItemGroup Condition=" '$(TargetFramework)' != 'netstandard2.0' ">
+    <PackageReference Include="jose-jwt" Version="2.3.*" />
+  </ItemGroup>
+
   <ItemGroup>
-    <PackageReference Include="jose-jwt" Version="2.6.1" />
     <PackageReference Include="Portable.BouncyCastle" Version="1.8.8" />
     <PackageReference Include="Newtonsoft.Json" Version="9.0.1"/>
   </ItemGroup>

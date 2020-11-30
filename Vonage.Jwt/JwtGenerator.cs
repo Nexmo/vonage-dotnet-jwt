@@ -10,6 +10,11 @@ using Org.BouncyCastle.Crypto;
 
 namespace Vonage.JwtGeneration
 {
+    /// <summary>
+    /// This class allows for the flexible generation of JWT tokens.
+    /// You can construct it with an Application Id, a choice of a raw private key or path to a private key
+    /// and optionally you can add a set of <see cref="Acls"/> to specify what access what accesses the JWT has
+    /// </summary>
     public class JwtGenerator : IDisposable
     {
         /// <summary>
@@ -47,7 +52,8 @@ namespace Vonage.JwtGeneration
         /// <see href="https://dashboard.nexmo.com/applications">Vonage API Account</see></param>
         /// <param name="privateKey">The Private Key for your Vonage Application, can either be a raw string or a file path to a key</param>
         /// <param name="acls">The <see cref="Acls">Acls</see> for the token, these indicate a resource version, name, and record
-        /// and indicate the JWT bearer's level of access to different API endpoints.</param>
+        /// and indicate the JWT bearer's level of access to different API endpoints. use <see cref="Acls.FullAcls"/> to generate a full set of ACLs,
+        /// no ACLs will be added by default.</param>
         /// <exception cref="ArgumentException">Throws an Argument exception if provided key is not valid</exception>
         public JwtGenerator(string applicationId, string privateKey, Acls acls=null)
         {
@@ -67,6 +73,9 @@ namespace Vonage.JwtGeneration
             SetupRsaParameters();
         }        
 
+        /// <summary>
+        /// extra step at the end of construction to full initalize the RSA parameters.
+        /// </summary>
         private void SetupRsaParameters()
         {
             using (var sr = new StringReader(PrivateKey))
@@ -122,6 +131,9 @@ namespace Vonage.JwtGeneration
             return JWT.Decode(token, _rsa, alg: JwsAlgorithm.RS256);
         }
 
+        /// <summary>
+        /// Disposes underlying system resources used by generator.
+        /// </summary>
         public void Dispose()
         {
             _rsa.Dispose();

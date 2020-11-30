@@ -3,13 +3,20 @@ using System.Threading.Tasks;
 
 namespace Vonage.JwtGeneration
 {
+    /// <summary>
+    /// Provides utility methods for creating a <see cref="JwtGenerator"/>
+    /// </summary>
     public class JwtGeneratorFactory
     {
         /// <summary>
-        /// Creates a JwtGenerator from an application Id and Private key Path
+        /// Creates a JwtGenerator from an application Id and Private key Path asynchrnously
         /// </summary>
-        /// <param name="applicationId"></param>
-        /// <param name="privateKeyPath"></param>
+        /// <param name="applicationId">The application Id from your 
+        /// <see href="https://dashboard.nexmo.com/applications">Vonage API Account</see></param>
+        /// <param name="privateKeyPath">a path to the private key for your Vonage Application, can either be a raw string or a file path to a key</param>
+        /// <param name="acls">The <see cref="Acls">Acls</see> for the token, these indicate a resource version, name, and record
+        /// and indicate the JWT bearer's level of access to different API endpoints. use <see cref="Acls.FullAcls"/> to generate a full set of ACLs,
+        /// no ACLs will be added by default.</param>
         /// <exception cref="System.IO.FileNotFoundException">Thrown if File Doesn't exist</exception>
         /// <returns></returns>
         public static async Task<JwtGenerator> CreateGeneratorWithFilePathAsync(string applicationId, string privateKeyPath, Acls acls = null)
@@ -29,8 +36,12 @@ namespace Vonage.JwtGeneration
         /// <summary>
         /// Creates a JwtGenerator from an application Id and Private key Path
         /// </summary>
-        /// <param name="applicationId"></param>
-        /// <param name="privateKeyPath"></param>
+        /// <param name="applicationId">The application Id from your 
+        /// <see href="https://dashboard.nexmo.com/applications">Vonage API Account</see></param>
+        /// <param name="privateKeyPath">A path to the private key for your Vonage Application, can either be a raw string or a file path to a key</param>
+        /// <param name="acls">The <see cref="Acls">Acls</see> for the token, these indicate a resource version, name, and record
+        /// and indicate the JWT bearer's level of access to different API endpoints. use <see cref="Acls.FullAcls"/> to generate a full set of ACLs,
+        /// no ACLs will be added by default.</param>
         /// <returns></returns>
         public static JwtGenerator CreateGeneratorWithFilePath(string applicationId, string privateKeyPath, Acls acls = null)
         {
@@ -42,8 +53,12 @@ namespace Vonage.JwtGeneration
         /// If using a File path it's advised to use the CreateGeneratorWithFilePathAsync
         /// so system resources are accessed asynchrnously.
         /// </summary>
-        /// <param name="applicationId"></param>
-        /// <param name="privateKey"></param>
+        /// <param name="applicationId">The application Id from your 
+        /// <see href="https://dashboard.nexmo.com/applications">Vonage API Account</see></param>
+        /// <param name="privateKey">The Private Key for your Vonage Application, can either be a raw string or a file path to a key</param>
+        /// <param name="acls">The <see cref="Acls">Acls</see> for the token, these indicate a resource version, name, and record
+        /// and indicate the JWT bearer's level of access to different API endpoints. use <see cref="Acls.FullAcls"/> to generate a full set of ACLs,
+        /// no ACLs will be added by default.</param>
         /// <returns></returns>
         public static JwtGenerator CreateGenerator(string applicationId, string privateKey, Acls acls = null)
         {
