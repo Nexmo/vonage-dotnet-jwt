@@ -4,7 +4,7 @@
     <TargetFrameworks>net452;net46;netstandard2.0</TargetFrameworks>
     <Version>0.1.0</Version>
     <Description>This is a utility package for generating JWTs for the Vonage APIs https://developer.nexmo.com/concepts/guides/authentication#json-web-tokens-jwt</Description>
-    <PackageProjectUrl>https://github.com/Nexmo/vonage-dotnet-jwt</PackageProjectUrl>
+    <PackageProjectUrl>https://github.com/Nexmo/vonage-Dotnet-jwt</PackageProjectUrl>
     <PackageReleaseNotes>https://github.com/Nexmo/vonage-dotnet-jwt/releases/tag/v0.1.0</PackageReleaseNotes>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>

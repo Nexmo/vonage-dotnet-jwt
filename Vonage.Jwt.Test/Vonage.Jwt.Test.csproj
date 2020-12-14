@@ -20,7 +20,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Vonage.Jwt\Vonage.Jwt.csproj" />
+    <ProjectReference Include="..\Vonage.Jwt\Vonage.Jwt.Dotnet.csproj" />
   </ItemGroup>
 
   <ItemGroup>

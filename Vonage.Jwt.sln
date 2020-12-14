@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30225.117
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Vonage.Jwt", "Vonage.Jwt\Vonage.Jwt.csproj", "{7FFEAC78-620D-49D9-B957-56A6A3B947F5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Vonage.Jwt", "Vonage.Jwt\Vonage.Jwt.Dotnet.csproj", "{7FFEAC78-620D-49D9-B957-56A6A3B947F5}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Vonage.Jwt.Test", "Vonage.Jwt.Test\Vonage.Jwt.Test.csproj", "{A5A9DCC9-0841-4250-A885-E7F9D2F94EB4}"
 EndProject
